@@ -29,18 +29,12 @@ groovydoc {
 	groovyClasspath = project.configurations.groovydocconf
 }
 
-jar {
-	exclude 'hibernate.search/**'
-}
-
 repositories {
 	mavenLocal()
 	maven { url "https://repo.grails.org/grails/core" }
 }
 
 dependencies {
-	compile "org.springframework.boot:spring-boot-starter-logging"
-	compile "org.springframework.boot:spring-boot-autoconfigure"
 	compile "org.grails:grails-core"
 	compile "org.grails:grails-logging"
 
@@ -56,18 +50,11 @@ dependencies {
 	provided "org.grails:grails-plugin-services"
 	provided "org.grails:grails-plugin-domain-class"
 	provided "org.grails:grails-plugin-datasource"
-	provided "org.springframework.boot:spring-boot-starter-actuator"
-	provided "org.springframework.boot:spring-boot-starter-tomcat"
-	provided "org.grails:grails-web-boot"
 
 	testCompile "org.grails:grails-plugin-testing"
-	testCompile "org.grails.plugins:geb"
-	testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-	testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 	
 	groovydocconf 'org.fusesource.jansi:jansi:1.13'
-	groovydocconf 'org.codehaus.groovy:groovy-all:2.4.12'
-
+	groovydocconf 'org.codehaus.groovy:groovy-all:2.5.14'
 }
 
 bootRun {
@@ -129,10 +116,3 @@ if (project.hasProperty('hibernateSearchMavenUser') && project.hasProperty('hibe
 		
 	}
 }
-
-task dumpDependencies {
-    doLast {
-        configurations.compile.each { println it }
-    }
-}
-
