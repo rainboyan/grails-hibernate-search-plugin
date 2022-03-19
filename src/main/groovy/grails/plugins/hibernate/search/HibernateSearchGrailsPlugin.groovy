@@ -24,7 +24,7 @@ class HibernateSearchGrailsPlugin extends Plugin {
 
     public static HibernateSearchConfig pluginConfig
 
-    def grailsVersion = "3.2 > *"
+    def grailsVersion = "4.0 > *"
 
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
@@ -32,7 +32,7 @@ class HibernateSearchGrailsPlugin extends Plugin {
     ]
 
     def observe = ["domainClass"]
-    def dependsOn = [hibernate: "* > 6.0"]
+    def dependsOn = [hibernate: "* > 7.0"]
     def loadAfter = ['hibernate']
     def title = "Hibernate Search Plugin"
     def author = "Mathieu Perez, Julie Ingignoli, Louis Grignon"
