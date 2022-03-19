@@ -62,6 +62,10 @@ bootRun {
 	sourceResources sourceSets.main
 }
 
+jar {
+    exclude 'hibernate/**'
+}
+
 grailsPublish {
 	// user/key: useless, see https://medium.com/@benorama/how-to-publish-your-grails-3-plugin-to-bintray-c341b24f567d#.elz43j5nq
 	user = 'lgrignon'
